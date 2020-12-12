@@ -39,19 +39,19 @@ const MessagesItems = ({item}) => {
 
 const styles = StyleSheet.create({
     othersMessageContainerView: {
-      width: Constants.screenWidth - 50,
-      backgroundColor: Colors.gray,
-      borderRadius: 5,
-      marginLeft: 25,
+      width: Constants.screenWidth - 140,
+      backgroundColor: '#3b4d61',
+      borderRadius: 20,
+      marginLeft: 120,
       marginTop: 5,
       marginBottom: 5,
       padding: 10
     },
 
     myMessageContainerView: {
-      width: Constants.screenWidth -50,
+      width: Constants.screenWidth -140,
       backgroundColor: Colors.gray,
-      borderRadius: 5,
+      borderRadius: 20,
       margin: 5,
       padding: 10
     },

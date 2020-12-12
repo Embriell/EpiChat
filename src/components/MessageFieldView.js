@@ -27,6 +27,7 @@ const styles = StyleSheet.create({
     containerView: {
       backgroundColor: Colors.white,
       width: Constants.screenWidth,
+      marginTop: 15,
       flex: 1,
       justifyContent: 'space-between',
     },
@@ -34,7 +35,7 @@ const styles = StyleSheet.create({
     fieldView: {
         flex: 1,
         flexDirection: 'row',
-        backgroundColor: '#3b4d61'
+        backgroundColor: '#3b4d61',
     },
 
     textField: {
@@ -43,6 +44,7 @@ const styles = StyleSheet.create({
         marginRight: 10,
         paddingLeft: 10,
         width: '75%',
+        height: '100%',
         borderColor: Colors.gray,
         borderWidth: 1,
         justifyContent: 'center',

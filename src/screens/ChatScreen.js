@@ -1,10 +1,11 @@
-import React, {useState, useEffect, useLayoutEffect} from 'react'
+import React, {useState, useEffect, useCallback} from 'react'
 import {StyleSheet, View, Text, TouchableOpacity, FlatList, KeyboardAvoidingView, Alert, Button} from 'react-native'
 import firebase, {firestore} from '../firebase/Firebase'
 import MessageFieldView from '../components/MessageFieldView'
 import MessagesItems from '../components/MessagesItems'
 import Strings from '../const/Strings'
 import DismissKeyboard from '../components/DismissKeyboard'
+import { GiftedChat } from 'react-native-gifted-chat'
 
 function ChatScreen({route, navigation}) {
 
@@ -123,7 +124,7 @@ function ChatScreen({route, navigation}) {
 
     return(
         <DismissKeyboard>
-            <KeyboardAvoidingView style={{flex: 1, flexDirection: 'column', justifyContent: 'center'}} behavior="padding" enabled keyboardVerticalOffset={100}>
+            <KeyboardAvoidingView style={{flex: 1, flexDirection: 'column', justifyContent: 'center'}} enabled keyboardVerticalOffset={100}>
                 <View style={styles.container}>
                     <FlatList style={styles.flatList} 
                         data={messageList}
