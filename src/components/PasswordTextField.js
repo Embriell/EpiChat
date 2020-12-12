@@ -4,10 +4,13 @@ import Constants from '../const/Constants'
 import Color from '../utils/Colors'
 
 const PasswordTextField = ({term, placeHolder, onTermChange, onValidatePasswordField, error}) => {
+
+    const isEnabled = error.length > 0;
+
     return (
         <View>
             <Text style={styles.textError}>{error}</Text>
-            <View style={styles.textFieldView}>
+            <View style={isEnabled ? styles.textFieldViewError : styles.textFieldView}>
                 <TextInput
                     autoCorrect={false}
                     secureTextEntry
@@ -27,25 +30,40 @@ const styles = StyleSheet.create({
     textField: {
         fontSize: 14,
         flex: 1,
-        marginHorizontal: 20
+        marginHorizontal: 10
     },
 
     textFieldView: {
-        height: Constants.screenHeight * 0.06,
-        width: Constants.screenWidth * 0.85,
-        borderRadius: 10,
-        marginTop: 5,
+        width: Constants.screenWidth * 0.80,
+        marginTop: 20,
+        height: 45,
+        borderWidth: StyleSheet.hairlineWidth,
+        borderColor: "#BAB7C3",
+        borderRadius: 30,
+        paddingHorizontal: 15,
+        color: "#514E5A",
+        fontWeight: "600",
         marginBottom: 10,
-        borderColor: Color.black,
-        borderWidth: 1,
-        justifyContent: 'center',
-        backgroundColor: Color.smoke
+    },
+
+    textFieldViewError: {
+        width: Constants.screenWidth * 0.80,
+        marginTop: 20,
+        height: 45,
+        borderWidth: StyleSheet.hairlineWidth,
+        borderColor: 'red',
+        borderRadius: 30,
+        paddingHorizontal: 15,
+        color: "#514E5A",
+        fontWeight: "600",
+        marginBottom: 10,
     },
 
     textError: {
         fontSize: 12,
         color: Color.red,
-        marginBottom: -5,
+        marginBottom: -15,
+        marginTop: 10,
         marginHorizontal: 20
     }
 });

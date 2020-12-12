@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     fieldView: {
         flex: 1,
         flexDirection: 'row',
-        backgroundColor: Colors.uaStudiosGreen
+        backgroundColor: '#3b4d61'
     },
 
     textField: {

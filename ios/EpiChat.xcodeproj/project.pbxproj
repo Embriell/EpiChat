@@ -20,6 +20,7 @@
 		8520C132D2A4649EC4D53765 /* libPods-EpiChat-EpiChatTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DC9EB1920CC1787DAD871DB /* libPods-EpiChat-EpiChatTests.a */; };
 		95BDE33B51630BECBB3E9AB0 /* libPods-EpiChat-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 456DA50E31EA52E509AD4B6D /* libPods-EpiChat-tvOSTests.a */; };
 		CFEBD0CC675DDE193E041AA7 /* libPods-EpiChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AADE736652A9445D376A93FA /* libPods-EpiChat.a */; };
+		55F3FBFDE1EC4B40BF0A1EE3 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04BCFCAF84AD4AD998C3F142 /* Ionicons.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		F79B903CF59486292B0C9A09 /* Pods-EpiChat-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EpiChat-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-EpiChat-tvOSTests/Pods-EpiChat-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		F85B8C127C5DFBEDCB2B5007 /* Pods-EpiChat-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EpiChat-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-EpiChat-tvOS/Pods-EpiChat-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		04BCFCAF84AD4AD998C3F142 /* Ionicons.ttf */ = {isa = PBXFileReference; name = "Ionicons.ttf"; path = "../node_modules/react-native-ionicons/fonts/Ionicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				663D995015EC2E8F1F02F222 /* Pods */,
+				BA1A166E262744DFB6D208C5 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -197,6 +200,15 @@
 			);
 			name = Products;
 			sourceTree = "<group>";
+		};
+		BA1A166E262744DFB6D208C5 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				04BCFCAF84AD4AD998C3F142 /* Ionicons.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -342,6 +354,7 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				55F3FBFDE1EC4B40BF0A1EE3 /* Ionicons.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

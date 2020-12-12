@@ -10,6 +10,7 @@ import Images from '../const/Images'
 import Constants from '../const/Constants'
 import Utility from '../utils/Utility'
 import firebase from '../firebase/Firebase'
+import LinearGradient from 'react-native-linear-gradient'
 
 function SignInScreen({navigation}) {
 
@@ -79,9 +80,12 @@ function SignInScreen({navigation}) {
     return(
         <DismissKeyboard>
             <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
+            <LinearGradient colors={['#3b4d61', 'rgb(31, 189, 251)']} start={[1, 3]} end={[0, 0]} style={styles.gradient_header}/>
+            <Image style={styles.logo} source={Images.logo}></Image>
+            <View style={styles.circle}/>
                 <View>
+                    <Text style={styles.text_log}>Login :</Text>
                     <SafeAreaView>
-                        <Image style={styles.logo} source={Images.logo}></Image>
                         <EmailTextField
                             term={email}
                             error={emailError}
@@ -96,7 +100,7 @@ function SignInScreen({navigation}) {
                             onTermChange={newPassword => setPassword(newPassword)}
                             onValidatePasswordField={ValidatePasswordField}
                         />
-                        <Button title={Strings.join} onPress={performAUth} isLoading={isLoading}/>
+                        <Button onPress={performAUth} isLoading={isLoading}/>
                     </SafeAreaView>
                 </View>
             </KeyboardAvoidingView>
@@ -109,7 +113,6 @@ const styles = StyleSheet.create({
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: Colors.theme
     },
 
     text: {
@@ -120,9 +123,42 @@ const styles = StyleSheet.create({
 
     logo: {
         alignSelf: 'center',
-        height: 48,
-        width: 200,
-        margin: 0.04 * Constants.screenHeight
+        position: 'absolute',
+        width: 125,
+        height: 30,
+        top: 40,
+        tintColor: 'white'
+    },
+
+    gradient_header: {
+        position: 'absolute',
+        left: 0,
+        right: 0,
+        top: 0,
+        height: '200%'
+    },
+    circle: {
+        width: 600,
+        height: 600,
+        borderRadius: 600/ 2,
+        backgroundColor: "#FFF",
+        position: 'absolute',
+        shadowColor: "grey",
+        shadowOpacity: 0.8,
+        shadowRadius: 5,
+        shadowOffset: {
+            height: 1,
+            width: 1
+          },
+        top: 100,
+        left: 10
+    },
+
+    text_log: {
+        fontWeight: "700",
+        fontSize: 30,
+        color: "#514E5A",
+        left: 5,
     },
 });
 

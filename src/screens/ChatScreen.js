@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useLayoutEffect} from 'react'
 import {StyleSheet, View, Text, TouchableOpacity, FlatList, KeyboardAvoidingView, Alert, Button} from 'react-native'
 import firebase, {firestore} from '../firebase/Firebase'
 import MessageFieldView from '../components/MessageFieldView'
@@ -14,6 +14,13 @@ function ChatScreen({route, navigation}) {
 
     const {item} = route.params
     const userID = firebase.auth().currentUser.uid
+
+    navigation.setOptions({
+        headerTintColor: 'white',
+        headerStyle: {
+            backgroundColor: 'rgb(31, 189, 251)'
+        },
+    })
 
     useEffect(() => {
         console.log(item)

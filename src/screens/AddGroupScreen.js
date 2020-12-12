@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState, useLayoutEffect} from 'react'
 import {StyleSheet, View, Alert, Text} from 'react-native'
 import CustomTextField from '../components/CustomTextField'
 import Button from '../components/Button'
@@ -12,6 +12,13 @@ function AddGroupScreen({navigation}) {
     const [groupName, setGroupName] = useState('')
     const [fieldError, setFieldError] = useState('')
     const [isLoading, setIsLoading] = useState(false)
+
+    navigation.setOptions({
+        headerTintColor: 'white',
+        headerStyle: {
+            backgroundColor: '#3b4d61'
+        },
+    })
 
     const ValidateField = () => {
         const isValidField = Utility.isValidField(groupName)

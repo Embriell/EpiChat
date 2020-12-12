@@ -1,14 +1,16 @@
 import React from 'react'
-import {TextInput, StyleSheet, Text, View} from 'react-native'
+import { TextInput, StyleSheet, Text, View } from 'react-native'
 import Colors from '../utils/Colors'
 import Constants from '../const/Constants'
 
-const CustomTextField = ({term, placeHolder, onTermChange, onValidateTextField, error}) => {
+const CustomTextField = ({ term, placeHolder, onTermChange, onValidateTextField, error }) => {
+
+    const isEnabled = error.length > 0;
 
     return (
         <View>
             <Text style={styles.TextError}>{error}</Text>
-            <View style={styles.TextFieldView}>
+            <View style={isEnabled ? styles.textFieldViewError : styles.textFieldView}>
                 <TextInput
                     autoCorrect={false}
                     style={styles.TextField}
@@ -27,26 +29,40 @@ const styles = StyleSheet.create({
     TextField: {
         fontSize: 14,
         flex: 1,
-        marginHorizontal: 20,
+        marginHorizontal: 10,
     },
 
-    TextFieldView: {
-        height: Constants.screenHeight * 0.06,
+    textFieldView: {
+        height: 45,
         width: Constants.screenWidth * 0.85,
-        marginTop: 5,
+        borderWidth: StyleSheet.hairlineWidth,
+        borderColor: "#BAB7C3",
+        borderRadius: 30,
+        paddingHorizontal: 15,
+        color: "#514E5A",
+        fontWeight: "600",
         marginBottom: 10,
-        borderColor: Colors.black,
-        borderWidth: 1,
-        justifyContent: 'center',
-        backgroundColor: Colors.smoke,
     },
 
     TextError: {
         fontSize: 12,
         color: Colors.red,
-        marginBottom: -5,
-        marginHorizontal: 20
-    }
+        marginHorizontal: 10,
+        marginBottom: -10
+    },
+
+    textFieldViewError: {
+        marginTop: 20,
+        height: 45,
+        width: Constants.screenWidth * 0.85,
+        borderWidth: StyleSheet.hairlineWidth,
+        borderColor: 'red',
+        borderRadius: 30,
+        paddingHorizontal: 15,
+        color: "#514E5A",
+        fontWeight: "600",
+        marginBottom: 10,
+    },
 });
 
 export default CustomTextField;

@@ -5,6 +5,7 @@ import Images from '../const/Images'
 import GroupsItems from '../components/GroupsItems'
 import firebase, {firestore} from '../firebase/Firebase'
 import LottieView from 'lottie-react-native'
+import LinearGradient from 'react-native-linear-gradient'
 
 function GroupsScreen({navigation}) {
 
@@ -13,6 +14,11 @@ function GroupsScreen({navigation}) {
 
     useLayoutEffect(() => {
         navigation.setOptions({
+            headerTintColor: 'white',
+            headerStyle: {
+              backgroundColor: 'rgb(31, 189, 251)'
+            },
+
             headerRight:() => (
                 <ButtonWithBackground onPress={() => {
                     navigation.navigate('AddGroupScreen')
