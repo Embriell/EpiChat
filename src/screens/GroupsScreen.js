@@ -6,11 +6,16 @@ import GroupsItems from '../components/GroupsItems'
 import firebase, {firestore} from '../firebase/Firebase'
 import LottieView from 'lottie-react-native'
 import LinearGradient from 'react-native-linear-gradient'
+import Constants from '../const/Constants'
+import SearchBar from '../components/SearchBar'
+import Strings from '../const/Strings'
 
 function GroupsScreen({navigation}) {
 
     const [groups, setGroups] = useState([])
     const [isDataLoaded, setIsDataLoaded] = useState(false)
+    const [search, setSearch] = useState('')
+    const isSearch = search.length > 0;
 
     useLayoutEffect(() => {
         navigation.setOptions({
@@ -75,10 +80,49 @@ function GroupsScreen({navigation}) {
         })
     }
 
-    function ShowEmptyGroupsAnim() {
-        return (
-            <View style={{width: '100%', height: '100%'}}>
-                <LottieView source={require('../../assets/empty-groups-chat.json')} autoPlay loop></LottieView>
+    // function ShowEmptyGroupsAnim() {
+    //     return (
+    //         <View style={{width: '100%', height: '100%'}}>
+    //             <LottieView source={require('../../assets/empty-groups-chat.json')} autoPlay loop></LottieView>
+    //         </View>
+    //     );
+    // }
+
+    function ShowGroupsSearch() {
+
+        var groupsSearch = []
+    
+        for (var i = 0; i < groups.length; i++) {
+            if (groups[i].groupName.includes(search)) {
+                groupsSearch.push(groups[i])
+            }
+        }
+        console.log("groupSearch:", groupsSearch)
+        return(
+            <View style={styles.container}>
+                <View style={styles.containerSearchbar}>
+                    <SearchBar 
+                        placeHolder={Strings.Search}
+                        value={search}
+                        onTermChange={newSearch => setSearch(newSearch)}
+                    />
+                </View>
+                <FlatList 
+                    data={groupsSearch}
+                    keyExtractor={(item, index) => 'key' + index}
+                    renderItem={({item}) => {
+                        return (
+                            <TouchableOpacity onPress={() => {
+                                navigation.navigate('ChatScreen', {item})
+                            }}>
+                                <GroupsItems item={item}>
+    
+                                </GroupsItems>
+                            </TouchableOpacity>
+                        );
+                    }}
+                >
+                </FlatList>
             </View>
         );
     }
@@ -87,6 +131,13 @@ function GroupsScreen({navigation}) {
         console.log("groups.length =", groups.length)
         return(
             <View style={styles.container}>
+                <View style={styles.containerSearchbar}>
+                    <SearchBar 
+                        placeHolder={Strings.Search}
+                        value={search}
+                        onTermChange={newSearch => setSearch(newSearch)}
+                    />
+                </View>
                 <FlatList 
                     data={groups}
                     keyExtractor={(item, index) => 'key' + index}
@@ -109,7 +160,8 @@ function GroupsScreen({navigation}) {
 
     return (
         // isDataLoaded ? ShowEmptyGroupsAnim() :
-        ShowGroupsView()
+
+        !isSearch ? ShowGroupsView() : ShowGroupsSearch()
     );
 } 
 
@@ -119,6 +171,12 @@ const styles = StyleSheet.create({
       backgroundColor: 'white',
       alignItems: 'center',
       justifyContent: 'center',
+    },
+
+    containerSearchbar: {
+        backgroundColor: 'rgb(31, 189, 251)',
+        width: Constants.screenWidth,
+        height: 46,
     },
 
     text: {
