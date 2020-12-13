@@ -124,7 +124,7 @@ function ChatScreen({route, navigation}) {
 
     return(
         <DismissKeyboard>
-            <KeyboardAvoidingView style={{flex: 1, flexDirection: 'column', justifyContent: 'center'}} enabled keyboardVerticalOffset={100}>
+            <KeyboardAvoidingView style={{flex: 1, flexDirection: 'column', justifyContent: 'center'}} behavior="padding" enabled keyboardVerticalOffset={100}>
                 <View style={styles.container}>
                     <FlatList style={styles.flatList} 
                         data={messageList}
@@ -162,13 +162,13 @@ const styles = StyleSheet.create({
     },
 
     flatList: {
-        marginBottom: 10,
+        marginBottom: 5,
         flex: 0.9,
 
     },
 
     messageFieldView: {
-        flex: 0.1
+        flex: 0.07
     },
 });
 

@@ -16,11 +16,11 @@
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* EpiChatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* EpiChatTests.m */; };
 		3CFA5F9D418A2EE2B82737C9 /* libPods-EpiChat-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B77C8B5F26C622538B9B25 /* libPods-EpiChat-tvOS.a */; };
+		55F3FBFDE1EC4B40BF0A1EE3 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04BCFCAF84AD4AD998C3F142 /* Ionicons.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		8520C132D2A4649EC4D53765 /* libPods-EpiChat-EpiChatTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DC9EB1920CC1787DAD871DB /* libPods-EpiChat-EpiChatTests.a */; };
 		95BDE33B51630BECBB3E9AB0 /* libPods-EpiChat-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 456DA50E31EA52E509AD4B6D /* libPods-EpiChat-tvOSTests.a */; };
 		CFEBD0CC675DDE193E041AA7 /* libPods-EpiChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AADE736652A9445D376A93FA /* libPods-EpiChat.a */; };
-		55F3FBFDE1EC4B40BF0A1EE3 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04BCFCAF84AD4AD998C3F142 /* Ionicons.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +45,7 @@
 		00E356EE1AD99517003FC87E /* EpiChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EpiChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* EpiChatTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EpiChatTests.m; sourceTree = "<group>"; };
+		04BCFCAF84AD4AD998C3F142 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-ionicons/fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* EpiChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EpiChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = EpiChat/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = EpiChat/AppDelegate.m; sourceTree = "<group>"; };
@@ -68,7 +69,6 @@
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		F79B903CF59486292B0C9A09 /* Pods-EpiChat-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EpiChat-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-EpiChat-tvOSTests/Pods-EpiChat-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		F85B8C127C5DFBEDCB2B5007 /* Pods-EpiChat-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EpiChat-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-EpiChat-tvOS/Pods-EpiChat-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		04BCFCAF84AD4AD998C3F142 /* Ionicons.ttf */ = {isa = PBXFileReference; name = "Ionicons.ttf"; path = "../node_modules/react-native-ionicons/fonts/Ionicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,7 +163,6 @@
 				30C1F736E973581AACC274DD /* Pods-EpiChat-tvOSTests.debug.xcconfig */,
 				F79B903CF59486292B0C9A09 /* Pods-EpiChat-tvOSTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -202,13 +201,12 @@
 			sourceTree = "<group>";
 		};
 		BA1A166E262744DFB6D208C5 /* Resources */ = {
-			isa = "PBXGroup";
+			isa = PBXGroup;
 			children = (
 				04BCFCAF84AD4AD998C3F142 /* Ionicons.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
-			path = "";
 		};
 /* End PBXGroup section */
 
@@ -306,6 +304,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = GWZ6R79TB4;
 						LastSwiftMigration = 1120;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
@@ -669,6 +668,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GWZ6R79TB4;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = EpiChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -692,6 +692,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GWZ6R79TB4;
 				INFOPLIST_FILE = EpiChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (

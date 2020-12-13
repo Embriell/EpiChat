@@ -127,6 +127,7 @@ const styles = StyleSheet.create({
         width: 125,
         height: 30,
         top: 40,
+        left: 30,
         tintColor: 'white'
     },
 
@@ -138,9 +139,9 @@ const styles = StyleSheet.create({
         height: '200%'
     },
     circle: {
-        width: 600,
-        height: 600,
-        borderRadius: 600/ 2,
+        width: 650,
+        height: 650,
+        borderRadius: 650/ 2,
         backgroundColor: "#FFF",
         position: 'absolute',
         shadowColor: "grey",
@@ -150,7 +151,7 @@ const styles = StyleSheet.create({
             height: 1,
             width: 1
           },
-        top: 100,
+        top: 30,
         left: 10
     },
 
@@ -158,7 +159,7 @@ const styles = StyleSheet.create({
         fontWeight: "700",
         fontSize: 30,
         color: "#514E5A",
-        left: 5,
+        alignSelf: 'center'
     },
 });
 

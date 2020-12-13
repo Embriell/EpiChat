@@ -27,7 +27,8 @@ const styles = StyleSheet.create({
     containerView: {
       backgroundColor: Colors.white,
       width: Constants.screenWidth,
-      marginTop: 15,
+      marginTop: -5,
+      marginBottom: -10,
       flex: 1,
       justifyContent: 'space-between',
     },

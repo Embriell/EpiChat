@@ -29,7 +29,8 @@ const styles = StyleSheet.create({
     textField: {
         fontSize: 14,
         flex: 1,
-        marginHorizontal: 10
+        marginHorizontal: 10,
+        backgroundColor: 'white'
     },
 
     textFieldView: {
