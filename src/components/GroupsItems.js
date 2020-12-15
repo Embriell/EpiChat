@@ -5,6 +5,7 @@ import Images from '../const/Images'
 import Constants from '../const/Constants'
 
 function GroupsItems({item}) {
+
     return(
         <View>
             <View style={styles.container}>
@@ -24,7 +25,7 @@ const styles = StyleSheet.create({
       flex: 1,
       flexDirection: 'row',
       height: 50,
-      width: Constants.screenWidth,
+      width: Constants.screenWidth - 30,
       margin: 10
     },
 
@@ -46,7 +47,7 @@ const styles = StyleSheet.create({
         color: Colors.black,
         fontSize: 14,
         fontWeight: 'bold',
-        marginHorizontal: 10
+        marginHorizontal: 10,
     },
 
     groupMembers: {

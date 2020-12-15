@@ -7,6 +7,7 @@ import GroupsScreen from '../screens/GroupsScreen'
 import ChatScreen from '../screens/ChatScreen'
 import AddGroupScreen from '../screens/AddGroupScreen'
 import SplashScreen from '../screens/SplashScreen'
+import PrivateMessages from '../screens/PrivateMessages'
 
 const Stack = createStackNavigator()
 
@@ -17,6 +18,7 @@ function ChatFlow() {
                 <Stack.Screen name= "SplashScreen" component={SplashScreen} options = {{headerShown: false}}/>
                 <Stack.Screen name= "SignInScreen" component={SignInScreen} options = {{headerShown: false}}/>
                 <Stack.Screen name= "GroupsScreen" component={GroupsScreen} options = {{title: "Groups"}}/>
+                <Stack.Screen name= "PrivateMessagesScreen" component={PrivateMessages} options = {{title: "My Messages"}}/>
                 <Stack.Screen name= "ChatScreen" component={ChatScreen} options = {{title:"Chats"}}/>
                 <Stack.Screen name= "AddGroupScreen" component={AddGroupScreen} options = {{title: "Add Group"}}/>
             </Stack.Navigator>

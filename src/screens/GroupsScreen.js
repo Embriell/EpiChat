@@ -9,6 +9,8 @@ import LinearGradient from 'react-native-linear-gradient'
 import Constants from '../const/Constants'
 import SearchBar from '../components/SearchBar'
 import Strings from '../const/Strings'
+import FooterTabGroups from '../components/FooterTabGroups'
+import FooterTabMessages from '../components/FooterTabMessages'
 
 function GroupsScreen({navigation}) {
 
@@ -66,7 +68,7 @@ function GroupsScreen({navigation}) {
             snapshot.docChanges().forEach(function(change) {
                 // setIsDataLoaded(true)
                 if (change.type == "added") {
-                    console.log("New group: ", change.doc.data())
+                    // console.log("New group: ", change.doc.data())
                     groupsArray.push(change.doc.data())
                 }
                 if (change.type == "modified") {
@@ -80,13 +82,31 @@ function GroupsScreen({navigation}) {
         })
     }
 
-    // function ShowEmptyGroupsAnim() {
-    //     return (
-    //         <View style={{width: '100%', height: '100%'}}>
-    //             <LottieView source={require('../../assets/empty-groups-chat.json')} autoPlay loop></LottieView>
-    //         </View>
-    //     );
-    // }
+    function GoToGroupsScreen() {
+        navigation.navigate("GroupsScreen")
+    }
+
+    function GoToMessageScreen() {
+    
+        // const user = firebase.auth().currentUser
+        // var name, email, photoUrl, uid, emailVerified;
+        // name = user.displayName;
+        // email = user.email;
+        // photoUrl = user.photoURL;
+        // emailVerified = user.emailVerified;
+        // uid = user.uid;
+        // console.log("User :", name, email, photoUrl, emailVerified, uid)
+
+        // user.providerData.forEach(function (profile) {
+        //     console.log("Sign-in provider: " + profile.providerId);
+        //     console.log("  Provider-specific UID: " + profile.uid);
+        //     console.log("  Name: " + profile.displayName);
+        //     console.log("  Email: " + profile.email);
+        //     console.log("  Photo URL: " + profile.photoURL);
+        // });
+
+        navigation.navigate('PrivateMessagesScreen')
+    }
 
     function ShowGroupsSearch() {
 
@@ -97,8 +117,7 @@ function GroupsScreen({navigation}) {
                 groupsSearch.push(groups[i])
             }
         }
-        console.log("groupSearch:", groupsSearch)
-        return(
+        return (
             <View style={styles.container}>
                 <View style={styles.containerSearchbar}>
                     <SearchBar 
@@ -123,12 +142,17 @@ function GroupsScreen({navigation}) {
                     }}
                 >
                 </FlatList>
+                <View style={styles.footerTab}>
+                    <View style={styles.fieldView}>
+                        <FooterTabGroups onGroups={GoToGroupsScreen}/>
+                        <FooterTabMessages onMessages={GoToMessageScreen}/>
+                    </View>
+                </View>
             </View>
         );
     }
 
     function ShowGroupsView() {
-        console.log("groups.length =", groups.length)
         return(
             <View style={styles.container}>
                 <View style={styles.containerSearchbar}>
@@ -154,13 +178,17 @@ function GroupsScreen({navigation}) {
                     }}
                 >
                 </FlatList>
+                <View style={styles.footerTab}>
+                    <View style={styles.fieldView}>
+                        <FooterTabGroups onGroups={GoToGroupsScreen}/>
+                        <FooterTabMessages onMessages={GoToMessageScreen}/>
+                    </View>
+                </View>
             </View>
         );
     }
 
     return (
-        // isDataLoaded ? ShowEmptyGroupsAnim() :
-
         !isSearch ? ShowGroupsView() : ShowGroupsSearch()
     );
 } 
@@ -171,6 +199,18 @@ const styles = StyleSheet.create({
       backgroundColor: 'white',
       alignItems: 'center',
       justifyContent: 'center',
+    },
+
+    footerTab: {
+        width: Constants.screenWidth,
+        height: 55,
+        backgroundColor: 'rgb(31, 189, 251)'
+    },
+
+    fieldView: {
+        flex: 1,
+        flexDirection: 'row',
+        borderRightColor: "black",
     },
 
     containerSearchbar: {

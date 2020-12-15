@@ -21,6 +21,10 @@ function ChatScreen({route, navigation}) {
         headerStyle: {
             backgroundColor: 'rgb(31, 189, 251)'
         },
+
+        headerRight:() => (
+        <Text style={styles.nameGroup} >channel: {item.groupName}</Text>
+        ),
     })
 
     useEffect(() => {
@@ -52,21 +56,23 @@ function ChatScreen({route, navigation}) {
     }
 
     function ShowAlertToJoinGroup() {
-        Alert.alret(
-            Strings.joinChat,
-            Strings.joinChatConfirm,
-            [{
-                text: 'Yes', onPress: () => {
-                    JoinGroup()
+        if (!isJoined) {
+            Alert.alret(
+                Strings.joinChat,
+                Strings.joinChatConfirm,
+                [{
+                    text: 'Yes', onPress: () => {
+                        JoinGroup()
+                    }
+                }, {
+                    text: 'No', onPress: () => {
+    
+                    }
                 }
-            }, {
-                text: 'No', onPress: () => {
-
-                }
-            }
-        ],
-        {cancelable: false}
-        )
+            ],
+            {cancelable: false}
+            )
+        }
     }
 
     function JoinGroup() {
@@ -124,7 +130,7 @@ function ChatScreen({route, navigation}) {
 
     return(
         <DismissKeyboard>
-            <KeyboardAvoidingView style={{flex: 1, flexDirection: 'column', justifyContent: 'center'}} behavior="padding" enabled keyboardVerticalOffset={100}>
+            <KeyboardAvoidingView style={{flex: 1, flexDirection: 'column', justifyContent: 'center'}} behavior='padding' enabled keyboardVerticalOffset={100}>
                 <View style={styles.container}>
                     <FlatList style={styles.flatList} 
                         data={messageList}
@@ -165,6 +171,13 @@ const styles = StyleSheet.create({
         marginBottom: 5,
         flex: 0.9,
 
+    },
+
+    nameGroup:{
+        color: 'red',
+        paddingRight: 15,
+        marginTop: 23,
+        fontSize: 18
     },
 
     messageFieldView: {

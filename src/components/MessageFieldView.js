@@ -27,6 +27,7 @@ const styles = StyleSheet.create({
     containerView: {
       backgroundColor: Colors.white,
       width: Constants.screenWidth,
+      height: Constants.screenHeight,
       marginTop: -5,
       marginBottom: -10,
       flex: 1,
