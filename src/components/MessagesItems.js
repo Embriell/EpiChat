@@ -10,7 +10,8 @@ import Strings from '../const/Strings'
 const MessagesItems = ({item}) => {
 
     const userID = firebase.auth().currentUser.uid
-    console.log("senderEmail =", item.senderEmail)
+    // console.log("item.createAt.seconds: ", item.createdAt.seconds)
+    // console.log("item.createAt.nanoseconds: ", item.createdAt.nanoseconds)
 
     function MessageView() {
         if (userID === item.senderID) {
@@ -18,6 +19,7 @@ const MessagesItems = ({item}) => {
                 <View style={styles.othersMessageContainerView}>
                     <Text style={[styles.senderName, {textAlign: 'right'}]}>{item.senderEmail}</Text>
                     <Text style={[styles.message, {textAlign: 'right'}]}>{item.message}</Text>
+                    <Text style={[styles.message, {textAlign: 'right'}]}></Text>
                 </View>
             );
         }
@@ -26,6 +28,7 @@ const MessagesItems = ({item}) => {
                 <View style={styles.myMessageContainerView}>
                     <Text style={[styles.senderName, {textAlign: 'left'}]}>{item.senderEmail}</Text>
                     <Text style={[styles.message, {textAlign: 'left'}]}>{item.message}</Text>
+                    <Text style={[styles.message, {textAlign: 'left'}]}></Text>
                 </View>
             );
         }

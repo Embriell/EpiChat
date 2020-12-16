@@ -9,7 +9,7 @@ import Colors from '../utils/Colors'
 import Images from '../const/Images'
 import Constants from '../const/Constants'
 import Utility from '../utils/Utility'
-import firebase from '../firebase/Firebase'
+import firebase, {firestore} from '../firebase/Firebase'
 import LinearGradient from 'react-native-linear-gradient'
 
 function SignInScreen({navigation}) {
@@ -45,10 +45,15 @@ function SignInScreen({navigation}) {
 
     const Registration = (email, password) => {
 
+        const db = firestore
+
         try {
             setIsLoading(true)
             firebase.auth().signInWithEmailAndPassword(email, password)
-            .then(user => {
+            .then(log => {
+                db.collection('users').doc(log.user.uid).set({
+                    
+                })
                 setIsLoading(false)
                     navigation.reset({
                         index: 0,

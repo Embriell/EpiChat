@@ -90,13 +90,13 @@ function ChatScreen({route, navigation}) {
     }
 
     function GetMessages() {
-        const db = firestore
+        const db = firebase.firestore()
         var messages = []
-        db.collection("message").doc(item.groupID).collection("messages")
+        db.collection("message").doc(item.groupID).collection("messages").orderBy("createdAt", "asc")
         .onSnapshot(function(snapshot) {
             snapshot.docChanges().forEach(function(change) {
                 if (change.type === "added") {
-                    console.log("New message", change.doc.data())
+                    // console.log("New message", change.doc.data())
                     messages.push(change.doc.data())
                 }
                 if (change.type === "modified") {
@@ -111,6 +111,9 @@ function ChatScreen({route, navigation}) {
     }
 
     function SendMessagesToChat() {
+
+        const timestamp = firebase.firestore.FieldValue.serverTimestamp;
+        firestore.collection("messages")
         const messageRef = firestore.collection("message").doc(item.groupID).collection("messages").doc()
         const userEmail = firebase.auth().currentUser.email
 
@@ -118,7 +121,8 @@ function ChatScreen({route, navigation}) {
             messageID: messageRef.id,
             message: message,
             senderID: userID,
-            senderEmail: userEmail  
+            senderEmail: userEmail,
+            createdAt: timestamp(),
         }).then(function (docRef) {
             console.log("Document written with ID", messageRef.id)
             setMessage('')
@@ -140,7 +144,7 @@ function ChatScreen({route, navigation}) {
                                 <TouchableOpacity onPress={() => {
 
                                 }}>
-                                    <MessagesItems item={item}/>
+                                    <MessagesItems item={item} createdAt={firebase.firestore.FieldValue.serverTimestamp}/>
                                 </TouchableOpacity>
                             );
                         }}/>
