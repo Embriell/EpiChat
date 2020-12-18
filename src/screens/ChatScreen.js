@@ -113,7 +113,8 @@ function ChatScreen({route, navigation}) {
     function SendMessagesToChat() {
 
         const timestamp = firebase.firestore.FieldValue.serverTimestamp;
-        firestore.collection("messages")
+        var date = new Date(timestamp * 1000);
+        console.log("offsetref:", date)
         const messageRef = firestore.collection("message").doc(item.groupID).collection("messages").doc()
         const userEmail = firebase.auth().currentUser.email
 
@@ -144,7 +145,7 @@ function ChatScreen({route, navigation}) {
                                 <TouchableOpacity onPress={() => {
 
                                 }}>
-                                    <MessagesItems item={item} createdAt={firebase.firestore.FieldValue.serverTimestamp}/>
+                                    <MessagesItems item={item}/>
                                 </TouchableOpacity>
                             );
                         }}/>

@@ -12,12 +12,13 @@ import Strings from '../const/Strings'
 import FooterTabGroups from '../components/FooterTabGroups'
 import FooterTabMessages from '../components/FooterTabMessages'
 
-function PrivateMessages({navigation}) {
+function PrivateMessages({navigation, route}) {
 
     const [groups, setGroups] = useState([])
     const [isDataLoaded, setIsDataLoaded] = useState(false)
     const [search, setSearch] = useState('')
     const isSearch = search.length > 0;
+    user = route.params
 
     useLayoutEffect(() => {
         navigation.setOptions({

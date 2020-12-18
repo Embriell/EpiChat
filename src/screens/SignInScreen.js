@@ -22,7 +22,7 @@ function SignInScreen({navigation}) {
 
     const ValidateEmailAddress = () => {
         const isValidEmail = Utility.isEmailValid(email)
-        isValidEmail ? setEmailError('') : setEmailError(Strings.InvalidEmailAdress)
+        isValidEmail && email.includes('@epitech.eu') ? setEmailError('') : setEmailError(Strings.InvalidEmailAdress)
         return isValidEmail
     }
 
@@ -51,9 +51,7 @@ function SignInScreen({navigation}) {
             setIsLoading(true)
             firebase.auth().signInWithEmailAndPassword(email, password)
             .then(log => {
-                db.collection('users').doc(log.user.uid).set({
-                    
-                })
+                // db.collection('users').doc(log.user.uid)
                 setIsLoading(false)
                     navigation.reset({
                         index: 0,
@@ -143,6 +141,7 @@ const styles = StyleSheet.create({
         top: 0,
         height: '200%'
     },
+
     circle: {
         width: 650,
         height: 650,
