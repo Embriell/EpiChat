@@ -36,19 +36,23 @@ const MessagesItems = ({item}) => {
     function MessageView() {
         if (userID === item.senderID) {
             return (
-                <View style={styles.othersMessageContainerView}>
-                    <Text style={[styles.senderName, {textAlign: 'right'}]}>{item.senderEmail}</Text>
-                    <Text style={[styles.message, {textAlign: 'right'}]}>{item.message}</Text>
-                    <Text style={[styles.hours, {textAlign: 'right'}]}>{dateForm}</Text>
+                <View>
+                    <View style={styles.othersMessageContainerView}>
+                        <Text style={[styles.senderName, {textAlign: 'right'}]}>{item.senderEmail}</Text>
+                        <Text style={[styles.message, {textAlign: 'right'}]}>{item.message}</Text>
+                    </View>
+                        <Text style={[styles.hours, {textAlign: 'right'}]}>{dateForm}</Text>
                 </View>
             );
         }
         else {
             return (
-                <View style={styles.myMessageContainerView}>
-                    <Text style={[styles.senderName, {textAlign: 'left'}]}>{item.senderEmail}</Text>
-                    <Text style={[styles.message, {textAlign: 'left'}]}>{item.message}</Text>
-                    <Text style={[styles.hours, {textAlign: 'left'}]}>{dateForm}</Text>
+                <View>
+                    <View style={styles.myMessageContainerView}>
+                        <Text style={[styles.senderName, {textAlign: 'left'}]}>{item.senderEmail}</Text>
+                        <Text style={[styles.message, {textAlign: 'left'}]}>{item.message}</Text>
+                    </View>
+                        <Text style={[styles.hours, {textAlign: 'left'}]}>{dateForm}</Text>
                 </View>
             );
         }
@@ -73,8 +77,10 @@ const styles = StyleSheet.create({
     },
 
     hours: {
-        color: Colors.white,
-        top: 5,
+        color: 'black',
+        top: 0,
+        padding: 10,
+        marginTop: -12,
         fontSize: 10,
     },
 
