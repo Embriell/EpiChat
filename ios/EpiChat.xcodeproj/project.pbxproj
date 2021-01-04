@@ -17,6 +17,8 @@
 		2DCD954D1E0B4F2C00145EB5 /* EpiChatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* EpiChatTests.m */; };
 		3CFA5F9D418A2EE2B82737C9 /* libPods-EpiChat-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B77C8B5F26C622538B9B25 /* libPods-EpiChat-tvOS.a */; };
 		55F3FBFDE1EC4B40BF0A1EE3 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04BCFCAF84AD4AD998C3F142 /* Ionicons.ttf */; };
+		5F7F8A2C25A388910012F45B /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 008F07F21AC5B25A0029DE68 /* main.jsbundle */; };
+		5F7F8A3225A388BF0012F45B /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 5F7F8A3125A388BF0012F45B /* assets */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		8520C132D2A4649EC4D53765 /* libPods-EpiChat-EpiChatTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DC9EB1920CC1787DAD871DB /* libPods-EpiChat-EpiChatTests.a */; };
 		95BDE33B51630BECBB3E9AB0 /* libPods-EpiChat-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 456DA50E31EA52E509AD4B6D /* libPods-EpiChat-tvOSTests.a */; };
@@ -61,6 +63,10 @@
 		456DA50E31EA52E509AD4B6D /* libPods-EpiChat-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EpiChat-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B77C8B5F26C622538B9B25 /* libPods-EpiChat-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EpiChat-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CA2D657FDA775A4572C844C /* Pods-EpiChat-EpiChatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EpiChat-EpiChatTests.release.xcconfig"; path = "Target Support Files/Pods-EpiChat-EpiChatTests/Pods-EpiChat-EpiChatTests.release.xcconfig"; sourceTree = "<group>"; };
+		5F7F8A1925A384C00012F45B /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = assets; path = assets/assets; sourceTree = "<group>"; };
+		5F7F8A1F25A387E10012F45B /* main.jsbundle */ = {isa = PBXFileReference; lastKnownFileType = text; name = main.jsbundle; path = ../release/main.jsbundle; sourceTree = "<group>"; };
+		5F7F8A2525A387F30012F45B /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = assets; path = ../release/assets; sourceTree = "<group>"; };
+		5F7F8A3125A388BF0012F45B /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = assets; path = ../assets; sourceTree = "<group>"; };
 		7DC9EB1920CC1787DAD871DB /* libPods-EpiChat-EpiChatTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EpiChat-EpiChatTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = EpiChat/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AADE736652A9445D376A93FA /* libPods-EpiChat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EpiChat.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,6 +182,10 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				5F7F8A2525A387F30012F45B /* assets */,
+				5F7F8A3125A388BF0012F45B /* assets */,
+				5F7F8A1F25A387E10012F45B /* main.jsbundle */,
+				5F7F8A1925A384C00012F45B /* assets */,
 				13B07FAE1A68108700A75B9A /* EpiChat */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* EpiChatTests */,
@@ -351,6 +361,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F7F8A3225A388BF0012F45B /* assets in Resources */,
+				5F7F8A2C25A388910012F45B /* main.jsbundle in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				55F3FBFDE1EC4B40BF0A1EE3 /* Ionicons.ttf in Resources */,
@@ -387,7 +399,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
 		0F4DA6947E3EB89A0919CC15 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
