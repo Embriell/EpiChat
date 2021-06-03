@@ -149,7 +149,6 @@ function ChatScreen({route, navigation}) {
                                 </TouchableOpacity>
                             );
                         }}/>
-
                         <View style={styles.messageFieldView}>
                             <MessageFieldView term={message}
                                 placeHolder={Strings.TextMessage}
